@@ -1,4 +1,4 @@
-// Cargar variables de entorno desde .env
+//Cargar variables de entorno desde .env
 require("dotenv").config();
 
 const { AzureKeyCredential } = require("@azure/core-auth");
@@ -12,7 +12,15 @@ const client = createClient(endpoint, credential);
 
 const imageUrl = 'https://learn.microsoft.com/azure/ai-services/computer-vision/media/quickstarts/presentation.png';
 
-const features = ['Objects', 'People'];
+const features = [ 
+    'Caption',
+    //'DenseCaptions',
+   // 'Objects',
+   // 'People',
+    //'Read',
+    //'SmartCrops',
+    'Tags'
+];
 
 async function main() {
   try {
@@ -37,3 +45,35 @@ async function main() {
 }
 
 main();
+
+// require("dotenv").config();
+// const { AzureKeyCredential } = require("@azure/core-auth");
+// const createClient = require("@azure-rest/ai-vision-image-analysis").default;
+
+// const endpoint = process.env['VISION_ENDPOINT'];
+// const key = process.env['VISION_KEY'];
+
+// const credential = new AzureKeyCredential(key);
+// const client = createClient(endpoint, credential);
+
+// async function testConnection() {
+//   try {
+//     const response = await client.path("/imageanalysis:analyze").post({
+//       body: {
+//         url: "https://aka.ms/vision/image-analysis-sample"
+//       },
+//       queryParameters: {
+//         features: "Tags",
+//         language: "en"
+//       },
+//       contentType: "application/json"
+//     });
+
+//     console.log("Conexión OK ✅");
+//     console.dir(response.body, { depth: null });
+//   } catch (err) {
+//     console.error("❌ Error de conexión:", err.message);
+//   }
+// }
+
+// testConnection();
