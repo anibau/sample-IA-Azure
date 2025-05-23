@@ -53,5 +53,7 @@ if result.dense_captions is not None:
 # Get objects in the image
 
 
+    
+
 # Get people in the image
 
