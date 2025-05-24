@@ -1,0 +1,1 @@
+curl -X POST "https://labazure1-ia-service.cognitiveservices.azure.com//language/:analyze-text?api-version=2023-04-01" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: 5XwOkcPhjK2PwzFJq7u636HZYyYLx2aFxmLxnq6xH85IKntotR5uJQQJ99BEACYeBjFXJ3w3AAAEACOG7piH" --data-ascii "{'analysisInput':{'documents':[{'id':1,'text':'hello'}]}, 'kind': 'LanguageDetection'}"
